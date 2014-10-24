@@ -1,8 +1,10 @@
+import java.math.BigInteger;
+
 
 public class Main {
 
 	public static void main(String[] args) {
-		problem5();
+		problem20();
 	}
 	
 	public static void problem2(){
@@ -38,4 +40,27 @@ public class Main {
 		System.out.println(num);
 	}
 
+	public static void problem20(){
+		BigInteger hundredFactorial = BigInteger.ONE;
+		BigInteger i = BigInteger.valueOf(100);
+		
+		while(i.compareTo(BigInteger.ONE) != 0){
+			hundredFactorial = hundredFactorial.multiply(i);
+			i = i.subtract(BigInteger.ONE);
+		}
+		String hundredFactorialString = hundredFactorial.toString();
+		int[] hundredFactorialArray = new int[hundredFactorialString.length()];
+		
+		for(int j = 0; j < hundredFactorialArray.length; j++){
+			hundredFactorialArray[j] = Integer.parseInt(String.valueOf(hundredFactorialString.charAt(j)));
+		}
+		
+		int sum = 0;
+		
+		for(int j = 0; j < hundredFactorialArray.length; j++){
+			sum += hundredFactorialArray[j];
+		}
+		
+		System.out.println(sum);
+	}
 }
