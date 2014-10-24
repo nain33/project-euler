@@ -2,7 +2,7 @@
 public class Main {
 
 	public static void main(String[] args) {
-		problem2();
+		problem5();
 	}
 	
 	public static void problem2(){
@@ -20,6 +20,22 @@ public class Main {
 		}
 		
 		System.out.println(evenNumbersSum);
+	}
+	
+	public static void problem5(){
+		int num = 1;
+		boolean foundNum = false;
+		
+		loop: while(!foundNum){
+			for(int i = 1; i <= 20; i++){
+				if(num%i != 0){
+					num++;
+					continue loop;
+				}
+			}
+			foundNum = true;
+		}
+		System.out.println(num);
 	}
 
 }
