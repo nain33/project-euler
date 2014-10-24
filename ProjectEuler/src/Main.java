@@ -4,7 +4,7 @@ import java.math.BigInteger;
 public class Main {
 
 	public static void main(String[] args) {
-		problem20();
+		problem6();
 	}
 	
 	public static void problem2(){
@@ -38,6 +38,26 @@ public class Main {
 			foundNum = true;
 		}
 		System.out.println(num);
+	}
+	
+	public static void problem6(){
+		int sumOfTheSquares = 0;
+		
+		for(int i = 1; i <= 100; i++){
+			sumOfTheSquares += Math.pow(i, 2);
+		}
+		
+		int squareOfTheSums = 0;
+		int sum = 0;
+		
+		for(int i = 1; i <= 100; i++){
+			sum += i;
+		}
+		
+		squareOfTheSums = (int) Math.pow(sum, 2);
+		
+		int difference = Math.abs(squareOfTheSums - sumOfTheSquares);
+		System.out.println(difference);
 	}
 
 	public static void problem20(){
